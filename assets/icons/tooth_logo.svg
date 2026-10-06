@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="dentiaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="50%" stop-color="#028090"/>
+      <stop offset="100%" stop-color="#00a896"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="url(#dentiaGrad)"/>
+  <path d="M50 22 C34 22 26 34 26 46 C26 62 34 82 50 94 C66 82 74 62 74 46 C74 34 66 22 50 22 Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M38 46 C38 54 44 62 50 62 C56 62 62 54 62 46" fill="none" stroke="#0d363e" stroke-width="4" stroke-linecap="round"/>
+</svg>

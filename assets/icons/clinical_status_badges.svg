@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 80" width="520" height="80">
+  <!-- Sano (Verde) -->
+  <g transform="translate(10, 20)">
+    <rect width="110" height="38" rx="19" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+    <circle cx="22" cy="19" r="6" fill="#10b981"/>
+    <text x="36" y="24" font-family="sans-serif" font-size="13" font-weight="700" fill="#047857">Sano</text>
+  </g>
+  <!-- Caries (Ámbar) -->
+  <g transform="translate(135, 20)">
+    <rect width="115" height="38" rx="19" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="22" cy="19" r="6" fill="#f59e0b"/>
+    <text x="36" y="24" font-family="sans-serif" font-size="13" font-weight="700" fill="#b45309">Caries</text>
+  </g>
+  <!-- Restaurado (Azul) -->
+  <g transform="translate(265, 20)">
+    <rect width="130" height="38" rx="19" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <circle cx="22" cy="19" r="6" fill="#3b82f6"/>
+    <text x="36" y="24" font-family="sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">Restaurado</text>
+  </g>
+  <!-- Ausente (Gris) -->
+  <g transform="translate(410, 20)">
+    <rect width="105" height="38" rx="19" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <circle cx="22" cy="19" r="6" fill="#64748b"/>
+    <text x="36" y="24" font-family="sans-serif" font-size="13" font-weight="700" fill="#475569">Ausente</text>
+  </g>
+</svg>

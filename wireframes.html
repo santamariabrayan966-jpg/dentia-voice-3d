@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DentIA Voice 3D — Consultorio Vazques | Media Fidelidad / Wireframes</title>
+  <link rel="stylesheet" href="wireframes.css">
+</head>
+<body>
+
+  <!-- Header Board -->
+  <header class="wf-board-header">
+    <div class="wf-board-title">
+      <div class="wf-logo-box">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1f2937" stroke-width="2">
+          <path d="M12 2C8 2 6 5 6 8c0 4 2 9 6 12 4-3 6-8 6-12 0-3-2-6-6-6z"/>
+          <path d="M9 8c0 2 1.5 4 3 4s3-2 3-4"/>
+        </svg>
+      </div>
+      <div>
+        <h1>DentIA Voice 3D — Media Fidelidad (Wireframes)</h1>
+        <p>Consultorio Vazques • Herramientas de Prototipado & Interacción Hombre–Máquina (HCI) • Escala de Grises</p>
+      </div>
+    </div>
+    <div class="wf-board-tags">
+      <div class="wf-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+        Registro por Voz
+      </div>
+      <div class="wf-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 6 5 6 8c0 4 2 9 6 12 4-3 6-8 6-12 0-3-2-6-6-6z"/></svg>
+        Odontograma (Placeholder)
+      </div>
+      <div class="wf-tag">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        Asistente DentIA
+      </div>
+    </div>
+  </header>
+
+  <!-- Controls -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <div class="wf-mode-selector">
+      <button class="wf-mode-btn active" onclick="switchWfView('grid')">Lienzo Completo (Vista Canvas)</button>
+      <button class="wf-mode-btn" onclick="switchWfView('interactive')">Vista Flujo Secuencial</button>
+      <a href="index.html" class="wf-mode-btn" style="text-decoration:none; color:#1f2937; background:#e5e7eb; margin-left: 8px;">Ir a Alta Fidelidad ✨</a>
+    </div>
+    <span style="font-size: 11.5px; color: #6b7280;">Consultorio Vazques • Dr. Luis Ramos • Paciente: María Torres</span>
+  </div>
+
+  <!-- Wireframe Frames Grid (Screens 0 to 8) -->
+  <div class="wf-canvas-grid" id="wfCanvasContainer">
+
+    <!-- Frame 0: Login -->
+    <div class="wf-frame-card" id="wf-frame-0">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">0</div>
+        <div>
+          <h3>Login (Acceso Clínico)</h3>
+          <p>Consultorio Vazques • Pantalla de inicio de sesión profesional</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock" style="display:flex; align-items:center; justify-content:center; padding:18px 10px; background:#f3f4f6;">
+          <div style="background:#fff; border:1px solid #9ca3af; border-radius:6px; padding:14px; width:100%; max-width:240px; display:flex; flex-direction:column; gap:7px;">
+            <div style="text-align:center;">
+              <div style="width:28px; height:28px; background:#4b5563; border-radius:6px; margin:0 auto 4px;"></div>
+              <strong style="font-size:10.5px; color:#111827;">DentIA Voice 3D</strong>
+              <div style="font-size:8.5px; color:#6b7280;">Consultorio Vazques</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font-size:8px; font-weight:700; color:#374151;">Correo o usuario:</span>
+              <div class="wf-input-box" style="font-size:8px; padding:3px 6px;">dr.luis.ramos@vazques.pe</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font-size:8px; font-weight:700; color:#374151;">Contraseña:</span>
+              <div class="wf-input-box" style="font-size:8px; padding:3px 6px;">••••••••••••</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:4px; font-size:7.5px; color:#6b7280;">
+              <span>☑ Recordarme en este equipo</span>
+            </div>
+            <button class="wf-button primary" style="font-size:8.5px; padding:5px; margin-top:2px;">Iniciar sesión →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frame 1: Dashboard -->
+    <div class="wf-frame-card" id="wf-frame-1">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">1</div>
+        <div>
+          <h3>Dashboard</h3>
+          <p>Consultorio Vazques • Resumen del día y agenda clínica</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock">
+          <div class="wf-sidebar-stub">
+            <div class="wf-bar-icon" style="background:#4b5563;"></div>
+            <div class="wf-bar-icon"></div>
+            <div class="wf-bar-icon"></div>
+            <div class="wf-bar-icon"></div>
+            <div class="wf-bar-icon" style="margin-top:auto;"></div>
+          </div>
+          <div class="wf-main-stub">
+            <div class="wf-topbar-stub">
+              <span style="font-size:10.5px; font-weight:700;">Buenos días, Dr. Luis Ramos</span>
+              <div class="wf-input-box">🔍 Buscar pacientes...</div>
+            </div>
+            <!-- KPIs -->
+            <div class="wf-kpi-row">
+              <div class="wf-kpi-box"><strong>8</strong><span>Citas hoy</span></div>
+              <div class="wf-kpi-box"><strong>3</strong><span>Nuevos</span></div>
+              <div class="wf-kpi-box"><strong>12</strong><span>Activos</span></div>
+              <div class="wf-kpi-box"><strong>92%</strong><span>Ocupación</span></div>
+            </div>
+            <!-- Agenda & Acceso rápido -->
+            <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap:8px;">
+              <div style="background:#fff; border:1px solid #9ca3af; border-radius:4px; padding:6px;">
+                <span style="font-size:9.5px; font-weight:700;">Agenda: Consultorio Vazques</span>
+                <table class="wf-table-stub" style="margin-top:4px;">
+                  <tr><td>09:00</td><td>María Torres</td><td>Resina 16</td></tr>
+                  <tr><td>10:30</td><td>Carlos Medina</td><td>Control</td></tr>
+                  <tr><td>12:00</td><td>Ana Salazar</td><td>Ortodoncia</td></tr>
+                </table>
+              </div>
+              <div style="background:#fff; border:1px solid #9ca3af; border-radius:4px; padding:6px; display:flex; flex-direction:column; gap:4px;">
+                <span style="font-size:9.5px; font-weight:700;">Paciente actual:</span>
+                <div style="font-size:9px; border:1px solid #cbd5e1; padding:4px; border-radius:3px;">
+                  <strong>María Torres</strong><br>HC-00128
+                </div>
+                <button class="wf-button primary" style="font-size:8.5px; margin-top:auto;">Abrir Odontograma 🦷</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frame 2: Registro de Nuevo Paciente -->
+    <div class="wf-frame-card" id="wf-frame-2">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">2</div>
+        <div>
+          <h3>Registro de Nuevo Paciente</h3>
+          <p>Consultorio Vazques • Formulario estructural de admisión clínica</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock">
+          <div class="wf-sidebar-stub">
+            <div class="wf-bar-icon"></div>
+            <div class="wf-bar-icon" style="background:#4b5563;"></div>
+            <div class="wf-bar-icon"></div>
+            <div class="wf-bar-icon"></div>
+          </div>
+          <div class="wf-main-stub" style="padding:8px;">
+            <div class="wf-topbar-stub" style="margin-bottom:6px;">
+              <span style="font-size:10px; font-weight:700;">Nuevo Paciente</span>
+              <div style="display:flex; gap:4px;">
+                <button class="wf-button" style="font-size:7.5px; padding:2px 5px;">Cancelar</button>
+                <button class="wf-button primary" style="font-size:7.5px; padding:2px 5px;">Guardar → Ficha</button>
+              </div>
+            </div>
+            <div style="background:#fff; border:1px solid #9ca3af; border-radius:4px; padding:6px; display:flex; flex-direction:column; gap:4px; font-size:7.5px;">
+              <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:4px;">
+                <div><span>DNI:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">70694321</div></div>
+                <div><span>Nombres:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">María</div></div>
+                <div><span>Apellidos:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">Torres Mendoza</div></div>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:4px;">
+                <div><span>Fecha Nac.:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">14/05/1998</div></div>
+                <div><span>Sexo:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">Femenino ▾</div></div>
+                <div><span>Teléfono:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">+51 984 321 876</div></div>
+              </div>
+              <div><span>Dirección:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">Av. San Martín 420, Dpto. 302</div></div>
+              <div><span>Alergias:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">No refiere alergias medicamentosas</div></div>
+              <div><span>Antecedentes médicos:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">Normotensa, sin patología sistémica</div></div>
+              <div><span>Observaciones:</span><div class="wf-input-box" style="padding:2px 4px; font-size:7.5px;">Molestia en molar sup. der. (16)</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frame 3: Pacientes -->
+    <div class="wf-frame-card" id="wf-frame-3">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">3</div>
+        <div>
+          <h3>Pacientes</h3>
+          <p>Directorio, búsqueda y lista de expedientes</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock">
+          <div class="wf-sidebar-stub">
+            <div class="wf-bar-icon"></div>
+            <div class="wf-bar-icon" style="background:#4b5563;"></div>
+            <div class="wf-bar-icon"></div>
+            <div class="wf-bar-icon"></div>
+          </div>
+          <div class="wf-main-stub">
+            <div class="wf-topbar-stub">
+              <span style="font-size:10.5px; font-weight:700;">Pacientes (328)</span>
+              <button class="wf-button primary" style="font-size:8.5px;">+ Nuevo</button>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <div class="wf-input-box" style="flex-grow:1;">🔍 Buscar por nombre o DNI...</div>
+              <div style="font-size:8.5px; border:1px solid #9ca3af; padding:4px 6px; border-radius:4px;">Filtros ▾</div>
+            </div>
+            <table class="wf-table-stub">
+              <thead>
+                <tr><th>Paciente</th><th>DNI</th><th>Última aten.</th><th>Estado</th><th>Acción</th></tr>
+              </thead>
+              <tbody>
+                <tr style="background:#e5e7eb;">
+                  <td><strong>María Torres</strong></td><td>70694321</td><td>28 sep 2026</td><td>En tratam.</td>
+                  <td><button class="wf-button" style="padding:2px 5px; font-size:8px;">Abrir</button></td>
+                </tr>
+                <tr><td>Carlos Medina</td><td>40928371</td><td>12 sep 2026</td><td>Control</td><td><button class="wf-button" style="padding:2px 5px; font-size:8px;">Abrir</button></td></tr>
+                <tr><td>Ana Salazar</td><td>99823411</td><td>03 sep 2026</td><td>Ortodoncia</td><td><button class="wf-button" style="padding:2px 5px; font-size:8px;">Abrir</button></td></tr>
+                <tr><td>José Rivas</td><td>72514980</td><td>21 ago 2026</td><td>Rehab.</td><td><button class="wf-button" style="padding:2px 5px; font-size:8px;">Abrir</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frame 4: Ficha Clínica + Asistente DentIA -->
+    <div class="wf-frame-card" id="wf-frame-4">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">4</div>
+        <div>
+          <h3>Ficha Clínica + Asistente DentIA</h3>
+          <p>Expediente de María Torres con asistente clínico integrado</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock">
+          <div class="wf-main-stub" style="padding:10px;">
+            <div class="wf-topbar-stub">
+              <div>
+                <span style="font-size:10.5px; font-weight:700;">← María Torres</span>
+                <span style="font-size:8.5px; color:#6b7280;">• HC-00128 • 28 años</span>
+              </div>
+              <button class="wf-button primary" style="font-size:8.5px;">Pasar a Odontograma 🦷</button>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1.2fr; gap:8px;">
+              <div style="background:#fff; border:1px solid #9ca3af; border-radius:4px; padding:6px; font-size:8.5px; line-height:1.5;">
+                <strong>Resumen de Ficha:</strong><br>
+                • Atiende: Dr. Luis Ramos<br>
+                • Alergias: No refiere<br>
+                • Diagnóstico: Caries oclusal 16<br>
+                • Plan: Resina estética
+              </div>
+              <!-- Box Asistente IA Integrado -->
+              <div style="background:#fff; border:1.5px solid #4b5563; border-radius:6px; padding:8px; display:flex; flex-direction:column; gap:4px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:9.5px; font-weight:700;">🤖 Asistente Clínico DentIA</span>
+                  <span style="font-size:8px; background:#e5e7eb; padding:1px 4px; border-radius:3px;">Integrado</span>
+                </div>
+                <div style="background:#f3f4f6; border-radius:4px; padding:4px; font-size:8.5px; color:#374151;">
+                  "¿Qué le tratamos la última vez a María Torres y qué piezas tiene pendientes?"
+                </div>
+                <div style="display:flex; gap:3px;">
+                  <button class="wf-button" style="font-size:7.5px; padding:2px 4px;">Última vez</button>
+                  <button class="wf-button" style="font-size:7.5px; padding:2px 4px;">Pendientes</button>
+                  <button class="wf-button" style="font-size:7.5px; padding:2px 4px;">Protocolo 16</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frame 5: Odontograma (Esquema Básico) -->
+    <div class="wf-frame-card" id="wf-frame-5">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">5</div>
+        <div>
+          <h3>Odontograma (Esquema Básico)</h3>
+          <p>Estructura de arcada dental y selección de estados</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock">
+          <div class="wf-main-stub" style="padding:10px;">
+            <div class="wf-topbar-stub">
+              <span style="font-size:10px; font-weight:700;">Odontograma • María Torres (HC-00128)</span>
+              <span style="font-size:8px; border:1px solid #9ca3af; padding:2px 4px; border-radius:3px;">Esquema Básico</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap:8px;">
+              <!-- Placeholder Odontograma Schematic -->
+              <div class="wf-dental-viewport">
+                <span style="font-size:9.5px; font-weight:700; color:#6b7280;">[ ESQUEMA ESTRUCTURAL DE ARCADA ]</span>
+                <div style="display:flex; gap:4px; margin-top:8px;">
+                  <div style="width:18px; height:18px; border:1px solid #9ca3af; background:#e5e7eb; display:flex; align-items:center; justify-content:center; font-size:8px;">18</div>
+                  <div style="width:18px; height:18px; border:1px solid #9ca3af; background:#e5e7eb; display:flex; align-items:center; justify-content:center; font-size:8px;">17</div>
+                  <div style="width:20px; height:20px; border:2px solid #1f2937; background:#4b5563; color:#fff; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700;">16</div>
+                  <div style="width:18px; height:18px; border:1px solid #9ca3af; background:#e5e7eb; display:flex; align-items:center; justify-content:center; font-size:8px;">15</div>
+                  <div style="width:18px; height:18px; border:1px solid #9ca3af; background:#e5e7eb; display:flex; align-items:center; justify-content:center; font-size:8px;">14</div>
+                </div>
+                <div style="position:absolute; bottom:6px; font-size:8px; color:#6b7280;">
+                  Pieza 16 seleccionada: Caries Oclusal
+                </div>
+              </div>
+
+              <!-- Selector de Estados -->
+              <div style="background:#fff; border:1px solid #9ca3af; border-radius:4px; padding:6px; display:flex; flex-direction:column; gap:4px; font-size:8.5px;">
+                <strong>Pieza 16 (Molar Sup. Der.)</strong>
+                <span style="color:#6b7280;">Estados funcionales:</span>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px;">
+                  <button class="wf-button" style="font-size:8px; padding:2px 4px;">Sana</button>
+                  <button class="wf-button primary" style="font-size:8px; padding:2px 4px;">Caries</button>
+                  <button class="wf-button" style="font-size:8px; padding:2px 4px;">Restaurada</button>
+                  <button class="wf-button" style="font-size:8px; padding:2px 4px;">Ausente</button>
+                </div>
+                <span style="color:#6b7280; margin-top:2px;">Notas clínicas:</span>
+                <div style="border:1px solid #9ca3af; border-radius:3px; padding:3px; height:28px; background:#fafafa; font-size:7.5px;">
+                  Caries en surcos oclusales...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frame 6: Registro por Voz + IA Integrado -->
+    <div class="wf-frame-card" id="wf-frame-6">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">6</div>
+        <div>
+          <h3>Registro por Voz & IA Integrado</h3>
+          <p>Panel dentro del odontograma: Transcripción y validación</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock">
+          <div class="wf-main-stub" style="padding:10px;">
+            <div style="background:#fff; border:2px solid #1f2937; border-radius:6px; padding:8px; display:flex; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:9.5px; font-weight:700;">🎙 Registro por Voz DentIA</span>
+                <span style="font-size:8px; border:1px solid #9ca3af; padding:1px 3px; border-radius:3px;">Escuchando... 00:12</span>
+              </div>
+              <div class="wf-audio-wave">
+                <div class="wf-audio-bar" style="height:6px;"></div>
+                <div class="wf-audio-bar" style="height:16px;"></div>
+                <div class="wf-audio-bar" style="height:22px;"></div>
+                <div class="wf-audio-bar" style="height:12px;"></div>
+                <div class="wf-audio-bar" style="height:18px;"></div>
+                <div class="wf-audio-bar" style="height:8px;"></div>
+              </div>
+              <div style="background:#f3f4f6; border:1px solid #9ca3af; border-radius:4px; padding:4px; font-size:8.5px;">
+                <strong>Transcripción:</strong> <em>"Paciente María Torres con caries en pieza 16..."</em>
+              </div>
+              <div style="background:#fff; border:1px solid #4b5563; border-radius:4px; padding:4px; font-size:8.5px;">
+                <strong>Propuesta IA:</strong> Pieza 16 • Caries oclusal • Resina fotocurable
+              </div>
+              <div style="display:flex; justify-content:flex-end; gap:4px; margin-top:2px;">
+                <button class="wf-button" style="font-size:8.5px;">Corregir</button>
+                <button class="wf-button primary" style="font-size:8.5px;">Confirmar y guardar ✓</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frame 7: Tratamiento & Evolución -->
+    <div class="wf-frame-card" id="wf-frame-7">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">7</div>
+        <div>
+          <h3>Tratamiento & Evolución</h3>
+          <p>Línea de tiempo confirmada y resumen pedagógico</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock">
+          <div class="wf-main-stub" style="padding:10px;">
+            <div style="background:#f3f4f6; border:1px solid #4b5563; border-radius:4px; padding:5px; display:flex; align-items:center; gap:6px;">
+              <span style="font-size:12px;">✅</span>
+              <div>
+                <strong style="font-size:9.5px;">Hallazgo confirmado y guardado</strong>
+                <p style="font-size:7.5px; color:#6b7280;">Se actualizó el expediente en Consultorio Vazques</p>
+              </div>
+            </div>
+            <div style="background:#fff; border:1px solid #9ca3af; border-radius:4px; padding:6px; margin-top:6px; font-size:8.5px;">
+              <strong>Procedimientos de María Torres:</strong>
+              <div style="margin-top:3px; line-height:1.5;">
+                • <strong>05 oct 2026:</strong> Resina pieza 16 (Completado)<br>
+                • <strong>28 sep 2026:</strong> Diagnóstico y odontograma<br>
+                • <strong>12 sep 2026:</strong> Profilaxis coronal
+              </div>
+            </div>
+            <div style="background:#fff; border:1px dashed #4b5563; border-radius:4px; padding:5px; margin-top:6px; font-size:8px; color:#374151;">
+              <strong>Explicación al paciente (Resumen IA):</strong><br>
+              "Se retiró la caries en la pieza 16 y se restauró con resina estética. Próximo control en 6 meses."
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frame 8: Reportes Clínicos -->
+    <div class="wf-frame-card" id="wf-frame-8">
+      <div class="wf-frame-header">
+        <div class="wf-number-badge">8</div>
+        <div>
+          <h3>Reportes Clínicos</h3>
+          <p>Métricas de atención en Consultorio Vazques</p>
+        </div>
+      </div>
+      <div class="wf-frame-content">
+        <div class="wf-app-mock">
+          <div class="wf-main-stub" style="padding:10px;">
+            <div class="wf-topbar-stub">
+              <span style="font-size:9.5px; font-weight:700;">Reportes • Consultorio Vazques</span>
+              <span style="font-size:8px; border:1px solid #9ca3af; padding:1px 3px; border-radius:3px;">Octubre 2026 ▾</span>
+            </div>
+            <div class="wf-kpi-row" style="margin-top:6px;">
+              <div class="wf-kpi-box"><strong>142</strong><span>Pacientes</span></div>
+              <div class="wf-kpi-box"><strong>186</strong><span>Citas</span></div>
+              <div class="wf-kpi-box"><strong>215</strong><span>Tratamientos</span></div>
+              <div class="wf-kpi-box"><strong>28</strong><span>Pendientes</span></div>
+            </div>
+            <!-- Blueprint Chart -->
+            <div style="background:#fff; border:1px solid #9ca3af; border-radius:4px; height:80px; margin-top:6px; display:flex; align-items:flex-end; justify-content:space-around; padding:8px;">
+              <div style="width:12px; height:35px; background:#9ca3af;"></div>
+              <div style="width:12px; height:55px; background:#4b5563;"></div>
+              <div style="width:12px; height:45px; background:#9ca3af;"></div>
+              <div style="width:12px; height:68px; background:#1f2937;"></div>
+              <div style="width:12px; height:58px; background:#4b5563;"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:7.5px; color:#6b7280; padding:0 4px;">
+              <span>Sem 1</span><span>Sem 2</span><span>Sem 3</span><span>Sem 4</span><span>Sem 5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Banner -->
+  <footer class="wf-process-banner">
+    <div class="wf-process-title">
+      <div style="width:34px; height:34px; background:#374151; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff;">
+        🦷
+      </div>
+      <div>
+        <h4 style="font-size:13.5px; font-weight:700;">Flujo Clínico Principal DentIA (HCI)</h4>
+        <p style="font-size:10.5px; color:#6b7280;">Consultorio Vazques • Dr. Luis Ramos • Paciente: María Torres</p>
+      </div>
+    </div>
+    <div class="wf-process-steps">
+      <div class="wf-step-node">
+        <div class="wf-step-num">0</div>
+        <div class="wf-step-text">Login</div>
+      </div>
+      <div class="wf-step-arrow">→</div>
+      <div class="wf-step-node">
+        <div class="wf-step-num">1</div>
+        <div class="wf-step-text">Dashboard</div>
+      </div>
+      <div class="wf-step-arrow">→</div>
+      <div class="wf-step-node">
+        <div class="wf-step-num">2</div>
+        <div class="wf-step-text">Nuevo Paciente</div>
+      </div>
+      <div class="wf-step-arrow">→</div>
+      <div class="wf-step-node">
+        <div class="wf-step-num">3</div>
+        <div class="wf-step-text">Ficha Clínica</div>
+      </div>
+      <div class="wf-step-arrow">→</div>
+      <div class="wf-step-node">
+        <div class="wf-step-num">4</div>
+        <div class="wf-step-text">Odontograma 3D</div>
+      </div>
+      <div class="wf-step-arrow">→</div>
+      <div class="wf-step-node">
+        <div class="wf-step-num">5</div>
+        <div class="wf-step-text">Voz / IA</div>
+      </div>
+      <div class="wf-step-arrow">→</div>
+      <div class="wf-step-node">
+        <div class="wf-step-num">6</div>
+        <div class="wf-step-text">Evolución</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchWfView(mode) {
+      const container = document.getElementById('wfCanvasContainer');
+      const buttons = document.querySelectorAll('.wf-mode-btn');
+      if (mode === 'grid') {
+        container.style.display = 'grid';
+        container.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        buttons[0].classList.add('active');
+        buttons[1].classList.remove('active');
+      } else {
+        container.style.display = 'flex';
+        container.style.flexDirection = 'column';
+        buttons[0].classList.remove('active');
+        buttons[1].classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>

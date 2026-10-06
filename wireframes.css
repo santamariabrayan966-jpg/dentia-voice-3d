@@ -1,0 +1,406 @@
+/* ==========================================================================
+   DentIA Voice 3D - Media Fidelidad / Digital Wireframe System
+   Clean Greyscale Blueprint, UI Skeletons & Structural Flows
+   ========================================================================== */
+
+:root {
+  --wf-bg: #f3f4f6;
+  --wf-surface: #ffffff;
+  --wf-box-bg: #e5e7eb;
+  --wf-border: #9ca3af;
+  --wf-border-dark: #4b5563;
+  --wf-text-dark: #1f2937;
+  --wf-text-muted: #6b7280;
+  --wf-accent-step: #374151;
+  --radius-wf: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--wf-bg);
+  color: var(--wf-text-dark);
+  line-height: 1.4;
+  padding: 24px;
+}
+
+/* Master Header for Wireframe Presentation Board */
+.wf-board-header {
+  background: #ffffff;
+  border: 2px solid var(--wf-border-dark);
+  border-radius: 12px;
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.wf-board-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wf-logo-box {
+  width: 48px;
+  height: 48px;
+  background: var(--wf-box-bg);
+  border: 2px solid var(--wf-border-dark);
+  border-radius: var(--radius-wf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wf-board-title h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--wf-text-dark);
+}
+
+.wf-board-title p {
+  font-size: 13px;
+  color: var(--wf-text-muted);
+}
+
+.wf-board-tags {
+  display: flex;
+  gap: 10px;
+}
+
+.wf-tag {
+  background: var(--wf-box-bg);
+  border: 1px solid var(--wf-border);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Toggle Views: Board Grid vs Interactive Step */
+.wf-mode-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--wf-border);
+  width: fit-content;
+}
+
+.wf-mode-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  color: var(--wf-text-muted);
+}
+
+.wf-mode-btn.active {
+  background: var(--wf-accent-step);
+  color: #fff;
+}
+
+/* Wireframe Grid Board (Like Image 1) */
+.wf-canvas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.wf-frame-card {
+  background: #ffffff;
+  border: 2px solid var(--wf-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.wf-frame-header {
+  background: #f9fafb;
+  border-bottom: 2px solid var(--wf-border);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wf-number-badge {
+  width: 28px;
+  height: 28px;
+  background: var(--wf-accent-step);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wf-frame-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--wf-text-dark);
+}
+
+.wf-frame-header p {
+  font-size: 11px;
+  color: var(--wf-text-muted);
+}
+
+.wf-frame-content {
+  padding: 16px;
+  flex-grow: 1;
+  background: #ffffff;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Wireframe Structural UI Elements */
+.wf-app-mock {
+  display: flex;
+  height: 100%;
+  border: 1px solid var(--wf-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.wf-sidebar-stub {
+  width: 52px;
+  background: #f3f4f6;
+  border-right: 1px solid var(--wf-border);
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.wf-bar-icon {
+  width: 24px;
+  height: 24px;
+  background: #e5e7eb;
+  border: 1px solid var(--wf-border);
+  border-radius: 4px;
+}
+
+.wf-main-stub {
+  flex-grow: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fafafa;
+}
+
+.wf-topbar-stub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.wf-input-box {
+  background: #fff;
+  border: 1px solid var(--wf-border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 10px;
+  color: var(--wf-text-muted);
+  width: 140px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wf-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.wf-kpi-box {
+  background: #fff;
+  border: 1px solid var(--wf-border);
+  border-radius: 4px;
+  padding: 8px;
+  text-align: center;
+}
+
+.wf-kpi-box strong {
+  font-size: 14px;
+  display: block;
+}
+
+.wf-kpi-box span {
+  font-size: 9px;
+  color: var(--wf-text-muted);
+}
+
+.wf-table-stub {
+  width: 100%;
+  border: 1px solid var(--wf-border);
+  border-radius: 4px;
+  background: #fff;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.wf-table-stub th, .wf-table-stub td {
+  padding: 6px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.wf-table-stub th {
+  background: #f3f4f6;
+  font-weight: 700;
+}
+
+.wf-button {
+  background: #e5e7eb;
+  border: 1px solid var(--wf-border);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wf-button.primary {
+  background: var(--wf-accent-step);
+  color: #fff;
+  border-color: #1f2937;
+}
+
+/* Dental Wireframe Placeholder */
+.wf-dental-viewport {
+  border: 1.5px dashed var(--wf-border);
+  border-radius: 6px;
+  background: #f9fafb;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.wf-cross-box {
+  position: relative;
+}
+
+.wf-cross-box::before, .wf-cross-box::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top right, transparent calc(50% - 1px), #d1d5db, transparent calc(50% + 1px));
+}
+
+/* Voice Wave Wireframe */
+.wf-audio-wave {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.wf-audio-bar {
+  width: 3px;
+  background: var(--wf-border-dark);
+  border-radius: 2px;
+}
+
+/* Bottom Process Summary Banner */
+.wf-process-banner {
+  background: #ffffff;
+  border: 2px solid var(--wf-border-dark);
+  border-radius: 12px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.wf-process-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.wf-process-steps {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.wf-step-node {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wf-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--wf-border-dark);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wf-step-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--wf-text-dark);
+}
+
+.wf-step-arrow {
+  color: var(--wf-border);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .wf-canvas-grid { grid-template-columns: repeat(2, 1fr); }
+  .wf-process-banner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 768px) {
+  .wf-canvas-grid { grid-template-columns: 1fr; }
+  .wf-process-steps { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DentIA Voice 3D — Consultorio Vazques | Prototipo de Alta Fidelidad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =======================================================================
+       ACADEMIC EVALUATION TOP BAR
+       (Barra de navegación de evidencia para los cursos de Prototipado y HCI)
+       ======================================================================= -->
+  <aside class="evaluation-banner">
+    <div class="eval-brand-pill">
+      <span style="font-weight:700; color:#2dd4bf; letter-spacing:0.4px;">DENTIA VOICE 3D</span>
+      <span style="color:rgba(255,255,255,0.35);">•</span>
+      <span style="color:#e2e8f0; font-weight:600;">Consultorio Vazques</span>
+      <span style="color:rgba(255,255,255,0.35);">|</span>
+      <span style="color:#cbd5e1;">Evaluación: Herramientas de Prototipado & Interacción Hombre–Máquina (HCI)</span>
+    </div>
+    <div class="eval-tabs">
+      <button class="eval-tab-btn active" data-target="login" onclick="navigateTo('login')">00 Login</button>
+      <button class="eval-tab-btn" data-target="dashboard" onclick="navigateTo('dashboard')">01 Dashboard</button>
+      <button class="eval-tab-btn" data-target="new-patient" onclick="navigateTo('new-patient')">02 Nuevo Paciente</button>
+      <button class="eval-tab-btn" data-target="patients" onclick="navigateTo('patients')">03 Pacientes & Ficha</button>
+      <button class="eval-tab-btn" data-target="odontogram" onclick="navigateTo('odontogram')">04 Odontograma 3D & Voz</button>
+      <button class="eval-tab-btn" data-target="evolution" onclick="navigateTo('evolution')">05 Tratamiento & Evolución</button>
+      <button class="eval-tab-btn" data-target="reports" onclick="navigateTo('reports')">06 Reportes Clínicos</button>
+      <button class="eval-tab-btn" data-target="responsive" onclick="navigateTo('responsive')">📱 Evidencia Responsive</button>
+      <a href="wireframes.html" class="eval-tab-btn" style="text-decoration:none; background:#ffffff; color:#0d363e; font-weight:700;">Ver Media Fidelidad 📐</a>
+    </div>
+  </aside>
+
+  <div class="app-layout">
+
+    <!-- =====================================================================
+         CLINICAL SIDEBAR (CONSULTORIO VAZQUES)
+         ===================================================================== -->
+    <aside class="sidebar" style="display:none;">
+      <div class="brand-wrapper">
+        <div class="brand-logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C8 2 6 5 6 8c0 4 2 9 6 12 4-3 6-8 6-12 0-3-2-6-6-6z"/>
+            <path d="M9 8c0 2 1.5 4 3 4s3-2 3-4"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Dent<span>IA</span></h1>
+          <div class="brand-suborg">Consultorio Vazques</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Flujo Clínico Principal</span>
+
+        <a class="nav-link active" data-target="dashboard" onclick="navigateTo('dashboard')">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <span>Dashboard</span>
+        </a>
+
+        <a class="nav-link" data-target="new-patient" onclick="navigateTo('new-patient')">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          </div>
+          <span>Nuevo Paciente</span>
+        </a>
+
+        <a class="nav-link" data-target="patients" onclick="navigateTo('patients')">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
+          <span>Pacientes & Ficha</span>
+          <span class="nav-counter">328</span>
+        </a>
+
+        <a class="nav-link" data-target="odontogram" onclick="navigateTo('odontogram')">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 6 5 6 8c0 4 2 9 6 12 4-3 6-8 6-12 0-3-2-6-6-6z"/></svg>
+          </div>
+          <span>Odontograma 3D & Voz</span>
+        </a>
+
+        <a class="nav-link" data-target="evolution" onclick="navigateTo('evolution')">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span>Tratamiento y Evolución</span>
+        </a>
+
+        <span class="nav-section-title">Gestión Secundaria</span>
+
+        <a class="nav-link" data-target="reports" onclick="navigateTo('reports')">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          </div>
+          <span>Reportes Clínicos</span>
+        </a>
+
+        <a class="nav-link" onclick="showToast('Sincronización en la nube activa para Consultorio Vazques.')">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <span>Configuración</span>
+        </a>
+      </nav>
+
+      <!-- Consistent Professional Profile -->
+      <div class="doctor-profile-card">
+        <div class="doctor-avatar">LR</div>
+        <div class="doctor-meta">
+          <h4>Dr. Luis Ramos</h4>
+          <p>Consultorio Vazques</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =====================================================================
+         MAIN CLINICAL WORKSPACE
+         ===================================================================== -->
+    <main class="main-wrapper">
+
+      <!-- Header Topbar -->
+      <header class="topbar" style="display:none;">
+        <div class="search-bar-box">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" placeholder="Buscar pacientes, citas o tratamientos...">
+        </div>
+
+        <div class="topbar-actions">
+          <div class="clinic-location-chip">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Consultorio Vazques
+          </div>
+
+          <button class="action-btn-circle" onclick="showToast('Notificación: María Torres se encuentra en sala de espera.')" title="Notificaciones">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="badge-dot"></span>
+          </button>
+
+          <button class="btn btn-primary" onclick="navigateTo('new-patient')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nuevo Paciente
+          </button>
+        </div>
+      </header>
+
+      <!-- View Container (Switchable Clinical Modules) -->
+      <div class="view-container">
+
+        <!-- =================================================================
+             PANTALLA 00: LOGIN (ACCESO CLÍNICO DENTIA)
+             ================================================================= -->
+        <section id="view-login" class="view-section active">
+          <div class="login-view-wrapper">
+            <div class="login-card">
+              <div class="login-brand-header">
+                <div class="login-logo-pill">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2C8 2 6 5 6 8c0 4 2 9 6 12 4-3 6-8 6-12 0-3-2-6-6-6z"/>
+                    <path d="M9 8c0 2 1.5 4 3 4s3-2 3-4"/>
+                  </svg>
+                </div>
+                <h2>DentIA Voice 3D</h2>
+                <p>Consultorio Vazques • Acceso al Sistema Odontológico</p>
+              </div>
+
+              <form onsubmit="event.preventDefault(); handleLoginSubmit();">
+                <div class="login-form-group">
+                  <label class="login-label" for="loginEmail">Correo o usuario profesional:</label>
+                  <input type="text" id="loginEmail" class="login-input" value="dr.luis.ramos@vazques.pe" placeholder="ej. usuario@vazques.pe" required>
+                </div>
+
+                <div class="login-form-group">
+                  <label class="login-label" for="loginPassword">Contraseña:</label>
+                  <input type="password" id="loginPassword" class="login-input" value="••••••••••••" placeholder="Contraseña segura" required>
+                </div>
+
+                <div class="login-options-row">
+                  <label class="login-checkbox-label">
+                    <input type="checkbox" id="loginRemember" checked>
+                    <span>Recordarme en este equipo</span>
+                  </label>
+                  <span style="font-size:11.5px; color:#028090; font-weight:600; cursor:pointer;" onclick="showToast('Modo demo: Credenciales de Consultorio Vazques validadas.')">Sesión segura</span>
+                </div>
+
+                <button type="submit" class="btn-login-submit" id="btnLoginSubmit">
+                  <span>Iniciar sesión</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </form>
+
+              <div class="login-footer-hint">
+                Dr. Luis Ramos • Perfil Odontólogo Principal • Consultorio Vazques
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================
+             PANTALLA 01: DASHBOARD
+             ================================================================= -->
+        <section id="view-dashboard" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2>Buenos días, Dr. Luis Ramos 👋</h2>
+              <p>Consultorio Vazques • Resumen del día y citas programadas.</p>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-secondary" onclick="navigateTo('reports')">Ver Reportes</button>
+              <button class="btn btn-primary" onclick="navigateTo('odontogram')">Ir a Odontograma 3D 🦷</button>
+            </div>
+          </div>
+
+          <!-- 4 KPIs -->
+          <div class="stats-grid">
+            <div class="card stat-card">
+              <div class="stat-icon blue">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-value">8</div>
+                <div class="stat-label">Citas de hoy</div>
+                <div class="stat-subtext positive">▲ +2 vs. ayer</div>
+              </div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-icon green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Pacientes nuevos</div>
+                <div class="stat-subtext">Esta semana</div>
+              </div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-icon amber">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Tratamientos activos</div>
+                <div class="stat-subtext">En curso</div>
+              </div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-icon teal">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-value">92%</div>
+                <div class="stat-label">Ocupación de agenda</div>
+                <div class="stat-subtext positive">Disponibilidad óptima</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Split: Agenda vs Current Patient -->
+          <div class="dashboard-split">
+            <!-- Left: Schedule Table -->
+            <div class="card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                <h3 style="font-size:15px; font-weight:700; color:var(--teal-900);">Agenda de hoy</h3>
+                <span style="font-size:11.5px; color:#64748b;">Consultorio Vazques</span>
+              </div>
+
+              <table class="agenda-table">
+                <thead>
+                  <tr>
+                    <th>Hora</th>
+                    <th>Paciente</th>
+                    <th>Motivo</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="agenda-row" style="background:#f0fdfa; border-left:3px solid var(--teal-500);">
+                    <td>09:00</td>
+                    <td>
+                      <div class="patient-cell">
+                        <div class="patient-avatar-sm" style="background:#ccfbf1; color:#0f766e;">MT</div>
+                        <div>
+                          <strong>María Torres</strong>
+                          <div style="font-size:10.5px; color:#64748b;">HC-00128 • 28 años</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Restauración pieza 16</td>
+                    <td><span class="badge badge-healthy">En consulta</span></td>
+                    <td><button class="btn btn-teal-light" style="padding:3px 8px; font-size:11px;" onclick="navigateTo('odontogram')">Abrir 3D</button></td>
+                  </tr>
+
+                  <tr class="agenda-row">
+                    <td>10:30</td>
+                    <td>
+                      <div class="patient-cell">
+                        <div class="patient-avatar-sm">CM</div>
+                        <div>
+                          <strong>Carlos Medina</strong>
+                          <div style="font-size:10.5px; color:#64748b;">HC-00129 • 35 años</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Evaluación de sensibilidad</td>
+                    <td><span class="badge" style="background:#e0f2fe; color:#0369a1;">Confirmado</span></td>
+                    <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:11px;" onclick="navigateTo('patients')">Ficha</button></td>
+                  </tr>
+
+                  <tr class="agenda-row">
+                    <td>12:00</td>
+                    <td>
+                      <div class="patient-cell">
+                        <div class="patient-avatar-sm">AS</div>
+                        <div>
+                          <strong>Ana Salazar</strong>
+                          <div style="font-size:10.5px; color:#64748b;">HC-00130 • 26 años</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Control de ortodoncia</td>
+                    <td><span class="badge" style="background:#e0f2fe; color:#0369a1;">Confirmado</span></td>
+                    <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:11px;" onclick="navigateTo('patients')">Ficha</button></td>
+                  </tr>
+
+                  <tr class="agenda-row">
+                    <td>15:00</td>
+                    <td>
+                      <div class="patient-cell">
+                        <div class="patient-avatar-sm">JR</div>
+                        <div>
+                          <strong>José Rivas</strong>
+                          <div style="font-size:10.5px; color:#64748b;">HC-00131 • 42 años</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Rehabilitación oral</td>
+                    <td><span class="badge badge-caries">Pendiente</span></td>
+                    <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:11px;" onclick="navigateTo('patients')">Ficha</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Right: Current Patient María Torres -->
+            <div>
+              <div class="current-patient-banner">
+                <div class="current-patient-header">
+                  <div class="current-avatar">MT</div>
+                  <div class="current-info">
+                    <h3>María Torres</h3>
+                    <p>Paciente actual en atención</p>
+                    <span class="badge" style="background:rgba(255,255,255,0.18); color:#fff; margin-top:3px;">
+                      HC-00128 • 28 años • DNI: 70694321
+                    </span>
+                  </div>
+                </div>
+
+                <div class="current-details-list">
+                  <div class="current-detail-item">
+                    <span>Atención:</span>
+                    <span>Dr. Luis Ramos</span>
+                  </div>
+                  <div class="current-detail-item">
+                    <span>Hallazgo pendiente:</span>
+                    <span style="color:#fde68a;">Caries Oclusal Pieza 16</span>
+                  </div>
+                  <div class="current-detail-item">
+                    <span>Alergias médicas:</span>
+                    <span style="color:#99f6e4;">No refiere</span>
+                  </div>
+                </div>
+
+                <div style="display:flex; gap:8px;">
+                  <button class="btn btn-primary" style="flex-grow:1; background:#2dd4bf; color:#082329;" onclick="navigateTo('odontogram')">
+                    Abrir Odontograma 3D 🦷
+                  </button>
+                  <button class="btn btn-secondary" style="background:#fff; color:#0d363e;" onclick="navigateTo('patients')">
+                    Ver Ficha
+                  </button>
+                </div>
+              </div>
+
+              <!-- Quick Access -->
+              <div class="card" style="margin-top:14px;">
+                <h4 style="font-size:12.5px; font-weight:700; color:var(--teal-900); margin-bottom:8px;">Acciones Rápidas</h4>
+                <div class="quick-access-grid">
+                  <div class="quick-action-item" onclick="navigateTo('new-patient')">
+                    <div class="qa-icon">➕</div>
+                    <span>Nuevo Paciente</span>
+                  </div>
+                  <div class="quick-action-item" onclick="navigateTo('odontogram')">
+                    <div class="qa-icon">🎙️</div>
+                    <span>Registrar por Voz</span>
+                  </div>
+                  <div class="quick-action-item" onclick="navigateTo('patients')">
+                    <div class="qa-icon">📋</div>
+                    <span>Ficha e Historial</span>
+                  </div>
+                  <div class="quick-action-item" onclick="navigateTo('evolution')">
+                    <div class="qa-icon">📸</div>
+                    <span>Ver Evolución</span>
+                  </div>
+                  <div class="quick-action-item" onclick="navigateTo('reports')">
+                    <div class="qa-icon">📊</div>
+                    <span>Reporte del Mes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================
+             PANTALLA 02: REGISTRO DE NUEVO PACIENTE
+             ================================================================= -->
+        <section id="view-new-patient" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2>Registro de Nuevo Paciente</h2>
+              <p>Consultorio Vazques • Admisión y apertura de Historia Clínica Odontológica.</p>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-secondary" onclick="navigateTo('dashboard')">← Cancelar</button>
+              <button class="btn btn-primary" onclick="handleSaveNewPatient()">Guardar paciente → Ficha</button>
+            </div>
+          </div>
+
+          <div class="new-patient-card">
+            <form id="newPatientForm" onsubmit="event.preventDefault(); handleSaveNewPatient();">
+              <div class="new-patient-grid">
+                
+                <!-- 1. Identificación Personal -->
+                <div class="new-patient-section-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  1. Identificación del Paciente
+                </div>
+
+                <div class="np-form-group">
+                  <label class="np-label" for="npDni">DNI / Documento de Identidad:</label>
+                  <input type="text" id="npDni" class="np-input" value="70694321" placeholder="Ej. 70694321" required>
+                </div>
+
+                <div class="np-form-group">
+                  <label class="np-label" for="npNombres">Nombres:</label>
+                  <input type="text" id="npNombres" class="np-input" value="María" placeholder="Nombres del paciente" required>
+                </div>
+
+                <div class="np-form-group">
+                  <label class="np-label" for="npApellidos">Apellidos:</label>
+                  <input type="text" id="npApellidos" class="np-input" value="Torres Mendoza" placeholder="Apellidos completos" required>
+                </div>
+
+                <div class="np-form-group">
+                  <label class="np-label" for="npDob">Fecha de Nacimiento:</label>
+                  <input type="date" id="npDob" class="np-input" value="1998-05-14" required>
+                </div>
+
+                <div class="np-form-group">
+                  <label class="np-label" for="npSexo">Sexo:</label>
+                  <select id="npSexo" class="np-select" required>
+                    <option value="F" selected>Femenino</option>
+                    <option value="M">Masculino</option>
+                    <option value="O">Otro</option>
+                  </select>
+                </div>
+
+                <div class="np-form-group">
+                  <label class="np-label" for="npPhone">Teléfono de Contacto:</label>
+                  <input type="tel" id="npPhone" class="np-input" value="+51 984 321 876" placeholder="+51 9..." required>
+                </div>
+
+                <!-- 2. Dirección y Antecedentes Médicos -->
+                <div class="new-patient-section-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  2. Domicilio y Antecedentes Médicos
+                </div>
+
+                <div class="np-form-group form-col-full">
+                  <label class="np-label" for="npAddress">Dirección:</label>
+                  <input type="text" id="npAddress" class="np-input" value="Av. San Martín 420, Dpto. 302, Lima" placeholder="Av. / Jr. / Calle...">
+                </div>
+
+                <div class="np-form-group form-col-full">
+                  <label class="np-label" for="npAllergies">Alergias:</label>
+                  <input type="text" id="npAllergies" class="np-input" value="No refiere alergias medicamentosas conocidas" placeholder="Ej. Penicilina, látex, anestésicos...">
+                </div>
+
+                <div class="np-form-group form-col-full">
+                  <label class="np-label" for="npHistory">Antecedentes Médicos:</label>
+                  <textarea id="npHistory" class="np-textarea" rows="2" placeholder="Enfermedades crónicas, medicación habitual...">Sin antecedentes sistémicos de relevancia. Presión arterial normotensa (115/75 mmHg). Sin patología cardíaca.</textarea>
+                </div>
+
+                <!-- 3. Observaciones Clínicas -->
+                <div class="new-patient-section-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  3. Observaciones
+                </div>
+
+                <div class="np-form-group form-col-full">
+                  <label class="np-label" for="npObs">Observaciones Clínicas Iniciales:</label>
+                  <textarea id="npObs" class="np-textarea" rows="2" placeholder="Motivo de consulta reportado por el paciente...">Paciente acude a primera atención en Consultorio Vazques por molestia y dolor punzante leve en molar superior derecho al masticar alimentos fríos o dulces. Requiere evaluación odontográfica 3D en pieza 16.</textarea>
+                </div>
+
+              </div>
+
+              <div class="np-actions-bar">
+                <button type="button" class="btn btn-secondary" onclick="navigateTo('dashboard')">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="btnSaveNewPatient">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                  Guardar paciente → Ficha clínica
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- =================================================================
+             PANTALLA 03: PACIENTES & FICHA CLÍNICA
+             (CON ASISTENTE DENTIA INTEGRADO DENTRO DE LA FICHA)
+             ================================================================= -->
+        <section id="view-patients" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2>Pacientes & Ficha Clínica</h2>
+              <p>Consultorio Vazques • Expediente clínico de María Torres y Asistente DentIA integrado.</p>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-secondary" onclick="navigateTo('dashboard')">← Dashboard</button>
+              <button class="btn btn-primary" onclick="navigateTo('odontogram')">Pasar a Odontograma 3D →</button>
+            </div>
+          </div>
+
+          <div class="patients-layout">
+            <!-- Left Patients Column -->
+            <div class="patient-list-column">
+              <div class="search-bar-box" style="width:100%;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" placeholder="Buscar por nombre o DNI...">
+              </div>
+
+              <div class="filter-chips-row">
+                <div class="chip-filter active">Todos (328)</div>
+                <div class="chip-filter">En tratamiento (48)</div>
+                <div class="chip-filter">Controles (120)</div>
+              </div>
+
+              <!-- Selected Patient: María Torres -->
+              <div class="patient-card-item selected">
+                <div class="patient-avatar-sm" style="background:#ccfbf1; color:#0f766e; width:38px; height:38px; font-size:12px;">MT</div>
+                <div class="patient-item-info">
+                  <h4>María Torres</h4>
+                  <p>HC-00128 • 28 años • DNI: 70694321</p>
+                  <span class="badge badge-healthy" style="margin-top:3px;">En tratamiento</span>
+                </div>
+              </div>
+
+              <div class="patient-card-item" onclick="showToast('Caso demostrativo enfocado en María Torres (HC-00128)')">
+                <div class="patient-avatar-sm" style="width:38px; height:38px;">CM</div>
+                <div class="patient-item-info">
+                  <h4>Carlos Medina</h4>
+                  <p>HC-00129 • 35 años • DNI: 40928371</p>
+                  <span class="badge badge-restored" style="margin-top:3px;">Control</span>
+                </div>
+              </div>
+
+              <div class="patient-card-item" onclick="showToast('Caso demostrativo enfocado en María Torres (HC-00128)')">
+                <div class="patient-avatar-sm" style="width:38px; height:38px;">AS</div>
+                <div class="patient-item-info">
+                  <h4>Ana Salazar</h4>
+                  <p>HC-00130 • 26 años • DNI: 99823411</p>
+                  <span class="badge badge-healthy" style="margin-top:3px;">Ortodoncia</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Ficha Clínica de María Torres -->
+            <div class="clinical-record-card">
+              <div class="record-top-header">
+                <div class="record-patient-main">
+                  <div class="current-avatar" style="width:48px; height:48px; font-size:15px;">MT</div>
+                  <div>
+                    <h3 style="font-size:17px; font-weight:700; color:var(--teal-900);">María Torres</h3>
+                    <p style="font-size:11.5px; color:var(--text-muted);">
+                      HC-00128 • 28 años • Femenino • Consultorio Vazques • Dr. Luis Ramos
+                    </p>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="navigateTo('odontogram')">Abrir Odontograma 3D 🦷</button>
+              </div>
+
+              <div class="record-tabs-bar">
+                <div class="record-tab-item active">Resumen & Historial</div>
+                <div class="record-tab-item" onclick="navigateTo('evolution')">Tratamientos & Evolución</div>
+                <div class="record-tab-item">Radiografías / Imágenes</div>
+                <div class="record-tab-item">Documentos Clínicos</div>
+              </div>
+
+              <!-- General Info Boxes -->
+              <div class="info-cards-grid">
+                <div class="info-card-box">
+                  <h5>Contacto del Paciente</h5>
+                  <p>📱 +51 987 654 321</p>
+                  <p style="font-size:10.5px; color:#64748b; font-weight:normal;">maria.torres@email.com</p>
+                </div>
+                <div class="info-card-box">
+                  <h5>Antecedentes & Alergias</h5>
+                  <p style="color:#059669;">No refiere alergias</p>
+                  <p style="font-size:10.5px; color:#64748b; font-weight:normal;">Riesgo ASA: I (Sano)</p>
+                </div>
+                <div class="info-card-box">
+                  <h5>Motivo de Atención</h5>
+                  <p style="font-size:12px;">Sensibilidad al frío</p>
+                  <p style="font-size:10.5px; color:#64748b; font-weight:normal;">Sector molar superior derecho</p>
+                </div>
+              </div>
+
+              <!-- ASISTENTE DENTIA INTEGRADO DENTRO DE LA FICHA -->
+              <div class="integrated-assistant-card">
+                <div class="integrated-assistant-header">
+                  <div class="assistant-pill-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00a896" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    Asistente Clínico DentIA (Integrado en Ficha)
+                  </div>
+                  <span class="badge" style="background:#ccfbf1; color:#0f766e; font-size:10px;">🟢 Conectado al expediente</span>
+                </div>
+
+                <p style="font-size:11.5px; color:#475569;">
+                  Haz consultas rápidas sobre el historial de María Torres sin cambiar de pantalla:
+                </p>
+
+                <!-- Prompt Chips -->
+                <div class="chat-prompt-chips">
+                  <button class="prompt-chip-btn" onclick="askPatientAssistant('ultima_vez')">
+                    "¿Qué le tratamos la última vez?"
+                  </button>
+                  <button class="prompt-chip-btn" onclick="askPatientAssistant('pendientes')">
+                    "¿Qué piezas tiene pendientes?"
+                  </button>
+                  <button class="prompt-chip-btn" onclick="askPatientAssistant('protocolo16')">
+                    "¿Protocolo para pieza 16?"
+                  </button>
+                </div>
+
+                <!-- Structured Assistant Response Box -->
+                <div class="assistant-response-box" id="integratedAssistantResponse">
+                  <strong>DentIA Assistant:</strong> Selecciona una pregunta rápida arriba para consultar antecedentes, o pasa al Odontograma 3D para registrar hallazgos por voz.
+                </div>
+              </div>
+
+              <!-- Previous Appointments Timeline -->
+              <h4 style="font-size:13px; font-weight:700; color:var(--teal-900); margin-bottom:10px;">
+                Atenciones Anteriores en Consultorio Vazques
+              </h4>
+              <div class="timeline-list">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date">28 SEP 2026 • Dr. Luis Ramos</div>
+                    <p style="font-size:12.5px; font-weight:600; color:var(--teal-900);">Evaluación inicial y diagnóstico de caries oclusal en Pieza 16</p>
+                    <p style="font-size:11.5px; color:var(--text-muted);">Prueba de vitalidad pulpar positiva (+). Se agenda restauración con resina estética.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background:#2563eb; border-color:#dbeafe;"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date">12 SEP 2026 • Dr. Luis Ramos</div>
+                    <p style="font-size:12.5px; font-weight:600; color:var(--teal-900);">Profilaxis coronal y destartraje con ultrasonido</p>
+                    <p style="font-size:11.5px; color:var(--text-muted);">Remoción de biofilm y aplicación tópica de flúor barniz.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================
+             PANTALLA 03: ODONTOGRAMA 3D & REGISTRO POR VOZ
+             (ESTADOS: SANO, CARIES, RESTAURADO, AUSENTE + MODELO 3D PRELIMINAR)
+             ================================================================= -->
+        <section id="view-odontogram" class="view-section">
+          <div class="section-header">
+            <div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <h2>Odontograma 3D & Registro por Voz</h2>
+                <span class="tag-preliminar">Modelo 3D preliminar</span>
+              </div>
+              <p>Consultorio Vazques • Paciente: María Torres (HC-00128) • Atiende: Dr. Luis Ramos</p>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-secondary" onclick="navigateTo('evolution')">Ver Evolución →</button>
+              <button class="btn btn-primary" onclick="showToast('✓ Odontograma guardado en el expediente de María Torres.')">Guardar Cambios ✓</button>
+            </div>
+          </div>
+
+          <!-- Quick Stats Bar -->
+          <div class="odontogram-header-stats">
+            <div class="odonto-stat-badge">
+              <span class="dot-indicator" style="background:#10b981;"></span>
+              <span id="statCountHealthy">24 Sanas</span>
+            </div>
+            <div class="odonto-stat-badge">
+              <span class="dot-indicator" style="background:#f59e0b;"></span>
+              <span id="statCountCaries">3 Caries</span>
+            </div>
+            <div class="odonto-stat-badge">
+              <span class="dot-indicator" style="background:#2563eb;"></span>
+              <span id="statCountRestored">5 Restauradas</span>
+            </div>
+            <div class="odonto-stat-badge">
+              <span class="dot-indicator" style="background:#64748b;"></span>
+              <span id="statCountAbsent">1 Ausente</span>
+            </div>
+
+            <div style="margin-left:auto; display:flex; align-items:center; gap:8px;">
+              <span style="font-size:11.5px; color:#64748b;">Caso demostrativo:</span>
+              <span class="badge badge-caries" style="font-size:11px;">Pieza 16 en foco</span>
+            </div>
+          </div>
+
+          <!-- Main Odontogram Stage & Lateral Inspector -->
+          <div class="odontogram-work-area">
+
+            <!-- 3D WebGL Canvas Stage Card -->
+            <div class="stage-3d-card">
+              <div class="stage-top-controls">
+                <div class="stage-view-switches">
+                  <button class="stage-switch-btn active" data-angle="three-quarter" onclick="set3DViewAngle('three-quarter')">Perspectiva 3/4</button>
+                  <button class="stage-switch-btn" data-angle="front" onclick="set3DViewAngle('front')">Oclusión Frontal</button>
+                  <button class="stage-switch-btn" data-angle="upper" onclick="set3DViewAngle('upper')">Oclusal Superior</button>
+                  <button class="stage-switch-btn" data-angle="lower" onclick="set3DViewAngle('lower')">Oclusal Inferior</button>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <button class="stage-switch-btn" id="btnToggleFigma" style="border-color:#38bdf8; color:#38bdf8; padding:3px 8px;" onclick="toggleFigmaBackupView()" title="Alternar imagen de respaldo para capturas Figma">
+                    📷 Respaldo Figma
+                  </button>
+                  <span class="tag-preliminar" id="mainModelStatusTag" style="background:rgba(16,185,129,0.18); color:#34d399; border-color:rgba(16,185,129,0.35);">
+                    ● 32 piezas dentales identificadas
+                  </span>
+                </div>
+              </div>
+
+              <!-- Tools on the left -->
+              <div class="stage-tool-palette">
+                <button class="stage-tool-btn" title="Acercar Zoom" onclick="mainViewerZoom(0.85)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </button>
+                <button class="stage-tool-btn" title="Alejar Zoom" onclick="mainViewerZoom(1.18)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </button>
+                <button class="stage-tool-btn" title="Enfocar Pieza 16" onclick="focusPiece16()">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                </button>
+              </div>
+
+              <!-- 3D WebGL Render Frame -->
+              <div class="stage-render-frame">
+                <div id="mainOdontoViewport">
+                  <canvas id="mainDentalCanvas"></canvas>
+                  <div class="stage-overlay-hint" id="mainStageHint">
+                    Arrastra para rotar 360° • Rueda para zoom • Clic en cualquier diente para seleccionarlo
+                  </div>
+                </div>
+
+                <!-- Backup static render for Figma exports (hidden while WebGL is active) -->
+                <img id="dental3DMainImage" src="assets/images/arcade_persp.png" alt="Arcada Dental DentIA (Respaldo Figma)" class="dental-3d-image" style="display:none;">
+              </div>
+
+              <!-- Bottom Bar: Jaw articulation & Color Legend -->
+              <div class="stage-bottom-bar">
+                <div style="display:flex; align-items:center; gap:10px; flex:1; max-width:320px;">
+                  <label for="mainOpeningSlider" style="font-size:11px; font-weight:600; color:#94a3b8; white-space:nowrap;">Apertura Mandibular:</label>
+                  <input type="range" id="mainOpeningSlider" min="0" max="100" value="65" style="flex:1; accent-color:#2dd4bf; cursor:pointer; height:5px;">
+                  <span id="mainOpeningValue" style="font-size:11px; font-weight:700; color:#2dd4bf; min-width:34px;">65%</span>
+                </div>
+
+                <div class="legend-bar-inline" style="display:flex; align-items:center; gap:12px; font-size:11px; color:#cbd5e1;">
+                  <span style="display:flex; align-items:center; gap:4px;"><span style="display:inline-block; width:8px; height:8px; background:#e2e8f0; border-radius:2px;"></span>Sano</span>
+                  <span style="display:flex; align-items:center; gap:4px;"><span style="display:inline-block; width:8px; height:8px; background:#dc5264; border-radius:2px;"></span>Caries</span>
+                  <span style="display:flex; align-items:center; gap:4px;"><span style="display:inline-block; width:8px; height:8px; background:#38a5d0; border-radius:2px;"></span>Restaurado</span>
+                  <span style="display:flex; align-items:center; gap:4px;"><span style="display:inline-block; width:8px; height:8px; background:#64748b; border:1px dashed #94a3b8; border-radius:2px;"></span>Ausente</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Inspector Card: Tooth 16 & Voice Dock -->
+            <div class="tooth-inspector-card">
+              <div class="inspector-header">
+                <div class="tooth-preview-thumb" id="toothThumbPreview">
+                  <img src="assets/images/molar16_01.png" alt="Molar 16">
+                </div>
+                <div class="inspector-title">
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <h3>Pieza 16</h3>
+                    <span class="badge badge-caries" id="selectedToothBadge">Caries</span>
+                  </div>
+                  <p>Primer Molar Superior Derecho</p>
+                </div>
+              </div>
+
+              <!-- Functional State Switchers: Sana -> Caries -> Restaurada -> Ausente -->
+              <div>
+                <label style="font-size:11.5px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:4px;">
+                  Simulación de Estados Clínicos:
+                </label>
+                <div class="status-buttons-row">
+                  <button class="status-opt-btn healthy" data-state="healthy" onclick="setToothState('healthy')">
+                    <span class="dot-indicator" style="background:#10b981;"></span>
+                    Sana
+                  </button>
+                  <button class="status-opt-btn active caries" data-state="caries" onclick="setToothState('caries')">
+                    <span class="dot-indicator" style="background:#f59e0b;"></span>
+                    Caries
+                  </button>
+                  <button class="status-opt-btn restored" data-state="restored" onclick="setToothState('restored')">
+                    <span class="dot-indicator" style="background:#2563eb;"></span>
+                    Restaurada
+                  </button>
+                  <button class="status-opt-btn absent" data-state="absent" onclick="setToothState('absent')">
+                    <span class="dot-indicator" style="background:#64748b;"></span>
+                    Ausente
+                  </button>
+                </div>
+              </div>
+
+              <!-- Clinical Notes -->
+              <div>
+                <label style="font-size:11.5px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:4px;">
+                  Notas Clínicas (Pieza 16):
+                </label>
+                <textarea id="toothClinicalNotes" rows="2" style="width:100%; border:1px solid var(--border-light); border-radius:var(--radius-sm); padding:6px 8px; font-size:11.5px; outline:none; resize:none;">Caries oclusal activa en surcos profundos de esmalte y dentina superficial. Sensibilidad al frío.</textarea>
+              </div>
+
+              <!-- Integrated Voice Assistant Panel (Inside Odontogram) -->
+              <div class="voice-assistant-dock">
+                <div class="voice-dock-header">
+                  <div class="voice-dock-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+                    Registro por Voz DentIA
+                  </div>
+                  <span id="voiceStatusLabel" style="font-size:10.5px; font-weight:700; color:#0284c7;">Listo para dictar</span>
+                </div>
+
+                <!-- Animated Wave Indicator -->
+                <div class="audio-wave-container" id="audioWaveVisualizer" style="display:none;">
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                </div>
+
+                <!-- Live transcript -->
+                <div class="live-transcript-box" id="voiceTranscriptPreview">
+                  Dicta el hallazgo mientras atiendes a María Torres. La IA interpretará la pieza y el diagnóstico.
+                </div>
+
+                <!-- Ethical Decision Block (Corregir | Confirmar y guardar) -->
+                <div class="ai-decision-box" id="aiDecisionBox" style="display:none;">
+                  <div class="ai-decision-meta">
+                    <strong>Propuesta de la IA:</strong> Pieza 16 • Caries oclusal • Resina fotocurable
+                  </div>
+                  <div class="ai-clinical-warning">
+                    ⚠️ La decisión clínica final pertenece al Dr. Luis Ramos.
+                  </div>
+                  <div class="decision-actions-row">
+                    <button class="btn btn-outline-danger" style="flex:1; padding:5px 8px; font-size:11px;" onclick="correctVoiceData()">
+                      Corregir
+                    </button>
+                    <button class="btn btn-primary" style="flex:1.4; padding:5px 8px; font-size:11px;" onclick="confirmAndSaveVoiceFinding()">
+                      Confirmar y guardar ✓
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Trigger Voice Button -->
+                <button class="btn btn-voice" id="btnStartVoice" style="width:100%;" onclick="toggleVoiceRecording()">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+                  Capturar por Voz con IA
+                </button>
+              </div>
+
+              <button class="btn btn-secondary" style="margin-top:auto;" onclick="showToast('Pieza 16 actualizada en Consultorio Vazques.')">
+                Guardar en Historia Clínica
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- =================================================================
+             PANTALLA 04: TRATAMIENTO Y EVOLUCIÓN
+             ================================================================= -->
+        <section id="view-evolution" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2>Tratamiento & Evolución Clínica</h2>
+              <p>Consultorio Vazques • Seguimiento de procedimientos y comparativa de María Torres.</p>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-secondary" onclick="navigateTo('odontogram')">← Odontograma 3D</button>
+              <button class="btn btn-primary" onclick="navigateTo('reports')">Ver Reportes →</button>
+            </div>
+          </div>
+
+          <div class="evolution-grid">
+            <!-- Left: Evolution Timeline -->
+            <div class="card">
+              <h3 style="font-size:15px; font-weight:700; color:var(--teal-900); margin-bottom:14px;">
+                Historial de Procedimientos de María Torres
+              </h3>
+
+              <div class="timeline-list">
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background:#10b981; border-color:#dcfce7;"></div>
+                  <div class="timeline-content" style="border-left:3px solid #10b981;">
+                    <div class="timeline-date">05 OCT 2026 • Dr. Luis Ramos • Realizado</div>
+                    <p style="font-size:13.5px; font-weight:700; color:var(--teal-900);">Restauración con Resina Fotocurable en Pieza 16</p>
+                    <p style="font-size:12px; color:var(--text-muted); margin-top:3px;">
+                      Remoción conservadora de tejido cariado oclusal en Consultorio Vazques. Aislamiento absoluto y obturación con resina nanohíbrida estética color A2. Ajuste oclusal perfecto.
+                    </p>
+                    <span class="badge badge-healthy" style="margin-top:6px;">Tratamiento Completado</span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background:#2563eb; border-color:#dbeafe;"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date">28 SEP 2026 • Dr. Luis Ramos • Diagnóstico</div>
+                    <p style="font-size:13.5px; font-weight:700; color:var(--teal-900);">Evaluación Inicial y Odontograma 3D</p>
+                    <p style="font-size:12px; color:var(--text-muted); margin-top:3px;">
+                      Detección de sensibilidad en molar superior derecho. Registro por voz DentIA confirmó caries en surcos oclusales.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background:#64748b; border-color:#e2e8f0;"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date">12 SEP 2026 • Dr. Luis Ramos • Preventivo</div>
+                    <p style="font-size:13.5px; font-weight:700; color:var(--teal-900);">Profilaxis y Destartraje</p>
+                    <p style="font-size:12px; color:var(--text-muted); margin-top:3px;">
+                      Limpieza dental profesional completa y aplicación de flúor barniz.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Triad Visual Comparison -->
+            <div class="clinical-comparison-card">
+              <h3 style="font-size:15px; font-weight:700; color:var(--teal-900);">
+                Comparativa Visual Clínica (Pieza 16)
+              </h3>
+              <p style="font-size:11.5px; color:var(--text-muted);">
+                Seguimiento gráfico para control de calidad y educación de María Torres.
+              </p>
+
+              <div class="comparison-triad">
+                <div class="comparison-slot">
+                  <div class="comparison-img-wrapper">
+                    <img src="assets/images/molar16_01.png" alt="Antes">
+                  </div>
+                  <h5 style="color:#b45309;">1. Antes (Caries)</h5>
+                  <span>Lesión activa en esmalte</span>
+                </div>
+
+                <div class="comparison-slot">
+                  <div class="comparison-img-wrapper">
+                    <img src="assets/images/canino_sup.png" alt="Procedimiento" style="opacity:0.85;">
+                  </div>
+                  <h5 style="color:#0284c7;">2. Procedimiento</h5>
+                  <span>Aislamiento y grabado</span>
+                </div>
+
+                <div class="comparison-slot">
+                  <div class="comparison-img-wrapper">
+                    <img src="assets/images/molar_sup.png" alt="Después">
+                  </div>
+                  <h5 style="color:#059669;">3. Después (Resina)</h5>
+                  <span>Sellado y anatomía</span>
+                </div>
+              </div>
+
+              <!-- AI Generated Explanation for Patient -->
+              <div class="patient-explanation-box">
+                <h4>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  Explicación Pedagógica para la Paciente (Asistida por IA)
+                </h4>
+                <p>
+                  "Estimada María, en Consultorio Vazques retiramos la caries de tu primer molar superior derecho (pieza 16) y colocamos una resina estética idéntica al color de tu diente. Se devolvió la forma natural de masticación. Tu próximo control preventivo con el Dr. Luis Ramos será en 6 meses."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================
+             PANTALLA 05: REPORTES CLÍNICOS
+             (MÓDULO SECUNDARIO, SENCILLO Y PROFESIONAL)
+             ================================================================= -->
+        <section id="view-reports" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2>Reportes Clínicos y Métricas</h2>
+              <p>Consultorio Vazques • Indicadores de atención y tratamientos realizados.</p>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <select style="background:#fff; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:6px 10px; font-size:11.5px; font-weight:600; color:var(--teal-900); outline:none;">
+                <option>Mes actual: Octubre 2026</option>
+                <option>Trimestre Q3 2026</option>
+                <option>Año 2026</option>
+              </select>
+              <button class="btn btn-primary" onclick="showToast('Exportando informe mensual de Consultorio Vazques...')">Exportar PDF</button>
+            </div>
+          </div>
+
+          <!-- 4 KPIs Report -->
+          <div class="reports-kpi-row">
+            <div class="card stat-card">
+              <div class="stat-icon teal">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-value">142</div>
+                <div class="stat-label">Pacientes atendidos</div>
+                <div class="stat-subtext positive">▲ +18% este mes</div>
+              </div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-icon blue">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-value">186</div>
+                <div class="stat-label">Citas atendidas</div>
+                <div class="stat-subtext positive">94% puntualidad</div>
+              </div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-icon green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-value">215</div>
+                <div class="stat-label">Tratamientos realizados</div>
+                <div class="stat-subtext">Resinas, profilaxis, endos</div>
+              </div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-icon amber">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-value">28</div>
+                <div class="stat-label">Tratamientos pendientes</div>
+                <div class="stat-subtext">Agendados en sillón</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Grid -->
+          <div class="reports-charts-split">
+            <!-- Left Chart -->
+            <div class="card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <h3 style="font-size:14px; font-weight:700; color:var(--teal-900);">Evolución de Tratamientos vs Citas (Octubre 2026)</h3>
+                <span style="font-size:10.5px; color:#64748b;">Dr. Luis Ramos</span>
+              </div>
+
+              <div class="chart-svg-box">
+                <svg viewBox="0 0 500 200" width="100%" height="200">
+                  <line x1="30" y1="25" x2="480" y2="25" stroke="#f1f5f9" stroke-width="1"/>
+                  <line x1="30" y1="70" x2="480" y2="70" stroke="#f1f5f9" stroke-width="1"/>
+                  <line x1="30" y1="115" x2="480" y2="115" stroke="#f1f5f9" stroke-width="1"/>
+                  <line x1="30" y1="160" x2="480" y2="160" stroke="#e2e8f0" stroke-width="1.5"/>
+
+                  <text x="10" y="30" font-size="9" fill="#94a3b8">60</text>
+                  <text x="10" y="75" font-size="9" fill="#94a3b8">40</text>
+                  <text x="10" y="120" font-size="9" fill="#94a3b8">20</text>
+                  <text x="16" y="164" font-size="9" fill="#94a3b8">0</text>
+
+                  <!-- Week 1 -->
+                  <rect x="65" y="65" width="24" height="95" rx="3" fill="#028090"/>
+                  <rect x="93" y="50" width="24" height="110" rx="3" fill="#00a896"/>
+                  <text x="75" y="180" font-size="10" fill="#475569" font-weight="600">Sem 1</text>
+
+                  <!-- Week 2 -->
+                  <rect x="150" y="55" width="24" height="105" rx="3" fill="#028090"/>
+                  <rect x="178" y="42" width="24" height="118" rx="3" fill="#00a896"/>
+                  <text x="160" y="180" font-size="10" fill="#475569" font-weight="600">Sem 2</text>
+
+                  <!-- Week 3 -->
+                  <rect x="235" y="45" width="24" height="115" rx="3" fill="#028090"/>
+                  <rect x="263" y="35" width="24" height="125" rx="3" fill="#00a896"/>
+                  <text x="245" y="180" font-size="10" fill="#475569" font-weight="600">Sem 3</text>
+
+                  <!-- Week 4 -->
+                  <rect x="320" y="60" width="24" height="100" rx="3" fill="#028090"/>
+                  <rect x="348" y="48" width="24" height="112" rx="3" fill="#00a896"/>
+                  <text x="330" y="180" font-size="10" fill="#475569" font-weight="600">Sem 4</text>
+
+                  <!-- Week 5 -->
+                  <rect x="405" y="70" width="24" height="90" rx="3" fill="#38bdf8"/>
+                  <rect x="433" y="58" width="24" height="102" rx="3" fill="#2dd4bf"/>
+                  <text x="415" y="180" font-size="10" fill="#475569" font-weight="600">Sem 5</text>
+                </svg>
+
+                <div style="display:flex; justify-content:center; gap:16px; font-size:11.5px; margin-top:4px;">
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="width:10px; height:10px; background:#028090; border-radius:2px;"></span> Citas Atendidas
+                  </div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="width:10px; height:10px; background:#00a896; border-radius:2px;"></span> Tratamientos Realizados
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Distribution Donut -->
+            <div class="card">
+              <h3 style="font-size:14px; font-weight:700; color:var(--teal-900); margin-bottom:12px;">
+                Distribución por Procedimiento
+              </h3>
+
+              <div style="display:flex; align-items:center; justify-content:center; gap:20px; padding:6px 0;">
+                <svg viewBox="0 0 160 160" width="130" height="130">
+                  <circle cx="80" cy="80" r="54" fill="none" stroke="#f1f5f9" stroke-width="22"/>
+                  <!-- Resinas (45%) -->
+                  <circle cx="80" cy="80" r="54" fill="none" stroke="#00a896" stroke-width="22"
+                          stroke-dasharray="152 339" stroke-dashoffset="0"/>
+                  <!-- Profilaxis (30%) -->
+                  <circle cx="80" cy="80" r="54" fill="none" stroke="#2563eb" stroke-width="22"
+                          stroke-dasharray="101 339" stroke-dashoffset="-152"/>
+                  <!-- Endodoncias (15%) -->
+                  <circle cx="80" cy="80" r="54" fill="none" stroke="#f59e0b" stroke-width="22"
+                          stroke-dasharray="50 339" stroke-dashoffset="-253"/>
+                  <!-- Otros (10%) -->
+                  <circle cx="80" cy="80" r="54" fill="none" stroke="#64748b" stroke-width="22"
+                          stroke-dasharray="36 339" stroke-dashoffset="-303"/>
+                  <text x="80" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">215</text>
+                  <text x="80" y="96" text-anchor="middle" font-size="8.5" fill="#64748b">Total</text>
+                </svg>
+
+                <div style="display:flex; flex-direction:column; gap:6px; font-size:11.5px;">
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="width:9px; height:9px; background:#00a896; border-radius:50%;"></span>
+                    <span>Resinas (45%)</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="width:9px; height:9px; background:#2563eb; border-radius:50%;"></span>
+                    <span>Profilaxis (30%)</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="width:9px; height:9px; background:#f59e0b; border-radius:50%;"></span>
+                    <span>Endodoncias (15%)</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="width:9px; height:9px; background:#64748b; border-radius:50%;"></span>
+                    <span>Otros (10%)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================
+             PANTALLA 06: EVIDENCIA ACADÉMICA RESPONSIVA
+             (SECCIÓN INDEPENDIENTE FUERA DEL MENÚ CLÍNICO DEL ODONTÓLOGO)
+             ================================================================= -->
+        <section id="view-responsive" class="view-section">
+          <div class="academic-evidence-banner">
+            <div>
+              <strong>📌 Evidencia de Adaptabilidad Responsiva para Evaluación Académica</strong>
+              <div style="color:#64748b; font-size:11px;">
+                Muestra la adaptación de la ficha/odontograma de María Torres en Desktop, Tablet y Móvil.
+              </div>
+            </div>
+            <button class="btn btn-secondary" onclick="navigateTo('odontogram')">Volver al Flujo Clínico 🦷</button>
+          </div>
+
+          <div class="devices-preview-row">
+            <!-- 1. Desktop -->
+            <div>
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+                <span class="badge" style="background:#0f172a; color:#fff;">1</span>
+                <strong style="font-size:13px; color:var(--teal-900);">Vista Desktop (Consultorio Vazques)</strong>
+              </div>
+              <div class="device-frame-desktop">
+                <div class="device-screen-bar">
+                  <span class="window-dot red"></span>
+                  <span class="window-dot yellow"></span>
+                  <span class="window-dot green"></span>
+                  <span style="color:#94a3b8; font-size:9.5px; margin-left:8px;">DentIA Voice 3D — Full Suite</span>
+                </div>
+                <div style="padding:10px; background:#f8fafc; font-size:9.5px;">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                    <strong>María Torres (HC-00128)</strong>
+                    <span style="color:#059669;">24 Sanas • 3 Caries • 5 Rest.</span>
+                  </div>
+                  <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap:6px;">
+                    <div style="background:#0f172a; border-radius:6px; height:130px; display:flex; align-items:center; justify-content:center;">
+                      <img src="assets/images/arcade_persp.png" style="max-height:85%; max-width:85%; object-fit:contain;" alt="Desktop">
+                    </div>
+                    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:6px; padding:6px;">
+                      <strong>Pieza 16: Caries</strong>
+                      <p style="font-size:8px; color:#64748b; margin-top:2px;">Resina nanohíbrida</p>
+                      <div style="background:#f0fdfa; border:1px solid #99f6e4; padding:3px; margin-top:4px; border-radius:3px; font-size:7.5px;">
+                        🎙️ Dictado activo
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Tablet -->
+            <div>
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+                <span class="badge" style="background:#0f172a; color:#fff;">2</span>
+                <strong style="font-size:13px; color:var(--teal-900);">Vista Tablet</strong>
+              </div>
+              <div class="device-frame-tablet">
+                <div style="padding:10px; background:#f8fafc; font-size:9.5px;">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                    <strong>DentIA Tablet</strong>
+                    <span class="badge badge-caries" style="font-size:8px;">Pieza 16</span>
+                  </div>
+                  <div style="background:#0f172a; border-radius:6px; height:120px; display:flex; align-items:center; justify-content:center;">
+                    <img src="assets/images/arcade_front.png" style="max-height:80%; max-width:80%; object-fit:contain;" alt="Tablet">
+                  </div>
+                  <div style="background:#fff; border:1px solid #e2e8f0; border-radius:6px; padding:6px; margin-top:6px; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                      <strong>María Torres</strong>
+                      <div style="font-size:8px; color:#64748b;">Dr. Luis Ramos</div>
+                    </div>
+                    <button class="btn btn-primary" style="padding:2px 6px; font-size:8px;">Editar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Mobile -->
+            <div>
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+                <span class="badge" style="background:#0f172a; color:#fff;">3</span>
+                <strong style="font-size:13px; color:var(--teal-900);">Vista Móvil</strong>
+              </div>
+              <div class="device-frame-mobile">
+                <div class="mobile-notch"></div>
+                <div style="padding:10px; background:#f8fafc; font-size:9.5px;">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                    <strong>María Torres</strong>
+                    <span style="font-size:7.5px; color:#059669;">● Conectado</span>
+                  </div>
+                  <div style="background:#0f172a; border-radius:6px; height:100px; display:flex; align-items:center; justify-content:center;">
+                    <img src="assets/images/arcade_persp.png" style="max-height:80%; max-width:80%; object-fit:contain;" alt="Mobile">
+                  </div>
+                  <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:2px; margin-top:6px; text-align:center; font-size:7.5px;">
+                    <div style="background:#ecfdf5; padding:2px; border-radius:2px;">24 San.</div>
+                    <div style="background:#fffbeb; padding:2px; border-radius:2px;">3 Car.</div>
+                    <div style="background:#eff6ff; padding:2px; border-radius:2px;">5 Res.</div>
+                    <div style="background:#f1f5f9; padding:2px; border-radius:2px;">1 Aus.</div>
+                  </div>
+                  <div style="display:flex; justify-content:space-around; background:#fff; border-top:1px solid #e2e8f0; padding:6px 0; margin-top:8px; font-size:8px;">
+                    <span>🏠 Inicio</span>
+                    <span>👥 Ficha</span>
+                    <strong style="color:var(--teal-600);">🦷 3D</strong>
+                    <span>📊 Reporte</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Discretionary Metadata Footer -->
+      <footer style="padding: 12px 28px; border-top: 1px solid var(--border-light); font-size: 11px; color: #94a3b8; display:flex; justify-content:space-between; align-items:center; background:#ffffff;">
+        <div>
+          DentIA Voice 3D • <strong>Consultorio Vazques</strong>
+        </div>
+        <div>
+          * Nombres y datos demostrativos (Dr. Luis Ramos, María Torres) para fines académicos en Herramientas de Prototipado e Interacción Hombre–Máquina (HCI).
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Toast Notification Modal -->
+  <div id="toastNotification" class="toast-notification">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastMessageText">Acción clínica confirmada con éxito.</span>
+  </div>
+
+  <!-- Three.js & DentIA 3D Dental Viewer Engine -->
+  <script src="assets/3d/three.min.js"></script>
+  <script src="assets/3d/OrbitControls.js"></script>
+  <script src="assets/3d/GLTFLoader.js"></script>
+  <script src="assets/3d/dental-viewer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
